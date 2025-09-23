@@ -708,7 +708,7 @@ section,
   letter-spacing: 1px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px) { /*small screens*/
   .hero h1 {
     font-size: 30px;
     line-height: 36px;
@@ -866,20 +866,52 @@ section,
   background: var(--background-color);
   border: 2px solid var(--accent-color);
 }
-.divBtn{
+
+.divBtn {
+  margin: 20px 0;
+  padding: 5px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+
+#downloadBtn {
+  padding: 10px 20px;
+  font-size: large;
+  border-radius: 6px;
+  border: 2px solid #2c4964;
+  background-color: white;
+  color: #2c4964;
+  cursor: pointer;
+}
+
+#downloadBtn:hover {
+  background-color: #d43076;
+  color: #fff;
+}
+
+
+/* .divBtn{
   margin: 0 108px;
   padding: 5px;
 }
 #downloadBtn{
-  padding: 5px;
+  padding: 10px;
   font-size: large;
   border-radius: 6px;
   color: #2c4964;
-}
-#downloadBtn:hover{
-  color: var(--nav-hover-color);
+  margin-left: 185px;
+} */
+/* #downloadBtn:hover{ */
+  /* color: var(--nav-hover-color); */
+  /* color: #f2f6f9;
   font-size: medium;
-}
+  background-color: #d43076;
+} */
+/* @media (max-width: 640px)  {
+  #downloadBtn{
+    margin-left: 5px;
+  }
+} */
 
 /*--------------------------------------------------------------
 # Services Section
