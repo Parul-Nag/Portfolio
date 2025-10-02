@@ -1026,8 +1026,9 @@ section,
 /*--------------------------------------------------------------
 # Achievements Section
 --------------------------------------------------------------*/
-.main-block{
-  width: 1300px;
+/* .main-block{
+  width: 100%;
+  max-width: 1300px;
   height: 500px;
   border: 10px solid black;
   margin: 0 16%;
@@ -1036,9 +1037,9 @@ section,
   background-color: rgb(240, 243, 245);
   padding: 0 50px;
   gap: 20px;
-}
+} */
 
-.block{
+/* .block{
   flex-direction: column;
   width: 367px;
   height: 420px;
@@ -1048,9 +1049,9 @@ section,
   transition:transform 0.3s ease-in-out;
   box-shadow: 10px 10px 5px 5px rgba(83, 79, 82, 0.2); /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
 
-}
+/* }  */
 
-.block:hover{
+/* .block:hover{
   cursor:grab;
   transform: scale(1.1);
 }
@@ -1058,16 +1059,16 @@ section,
 .block img{
   width: 350px;
   height: 405px;
-} 
+}  */
 
 /* Overlay layer */
-.block .overlay {
+/* .block .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7); /* dark transparent */
+  background: rgba(0,0,0,0.7); 
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -1092,7 +1093,96 @@ section,
 .overlay p {
   font-size: 14px;
   line-height: 1.4;
+}  */
+
+.main-block {
+  width: 100%;
+  max-width: 1300px;
+  border: 10px solid black;
+  margin: 0 auto; /* center align */
+  margin-top: -5px;
+  display: flex;
+  flex-wrap: wrap;   /* ✅ images wrap on smaller screens */
+  justify-content: center;
+  background-color: rgb(240, 243, 245);
+  padding: 20px;
+  gap: 20px;
+  box-sizing: border-box;
 }
+
+.block {
+  flex-direction: column;
+  width: 367px;
+  height: 420px;
+  border: 8px solid rgb(246, 242, 244);
+  border-radius: 5px;
+  margin: 30px 10px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 10px 10px 5px 5px rgba(83, 79, 82, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block img {
+  width: 100%;
+  height: 420px; 
+  object-fit: fill;  /* ✅ sab same size dikhenge */
+}
+
+
+.block:hover{
+  cursor:grab;
+  transform: scale(1.1);
+}
+
+.block .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7); 
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.block:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(246, 26, 158);
+}
+
+.overlay p {
+  font-size: 14px;
+  line-height: 1.4;
+}  
+
+/* Tablet (2 per row) */
+@media (max-width: 992px) {
+  .block {
+    width: 45%;   /* 2 images ek row me */
+  }
+}
+
+/* Mobile (1 per row) */
+@media (max-width: 600px) {
+  .block {
+    width: 90%;   /* Full width */
+  }
+}
+
 
 
 /*--------------------------------------------------------------
