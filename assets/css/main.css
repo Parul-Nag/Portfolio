@@ -170,6 +170,13 @@ h6 {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
 
+/* .container {
+  max-width: 100% !important; 
+  padding-left: 150px; 
+  padding-right: 150px;
+} */
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -417,6 +424,7 @@ h6 {
   text-align: center;
   padding: 30px 0;
   position: relative;
+  border: 14px solid var(--accent-color);
 }
 
 .footer h3 {
@@ -913,67 +921,6 @@ section,
   }
 } */
 
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
-.services .service-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-  padding: 50px 30px;
-  transition: all 0.3s ease-in-out;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.services .service-item:before {
-  content: "";
-  position: absolute;
-  background: var(--accent-color);
-  inset: 100% 0 0 0;
-  transition: all 0.3s;
-  z-index: -1;
-}
-
-.services .service-item .icon {
-  margin-bottom: 10px;
-}
-
-.services .service-item .icon i {
-  color: var(--accent-color);
-  font-size: 36px;
-  transition: ease-in-out 0.3s;
-}
-
-.services .service-item h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.services .service-item h4 a {
-  color: var(--heading-color);
-  transition: ease-in-out 0.3s;
-}
-
-.services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-  transition: ease-in-out 0.3s;
-}
-
-.services .service-item:hover h4 a,
-.services .service-item:hover .icon i,
-.services .service-item:hover p {
-  color: var(--contrast-color);
-}
-
-.services .service-item:hover:before {
-  background: var(--accent-color);
-  inset: 0;
-  border-radius: 0px;
-}
 
 /*--------------------------------------------------------------
 # Portfolio Section
@@ -1077,91 +1024,76 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Testimonials Section
+# Achievements Section
 --------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
+.main-block{
+  width: 1300px;
+  height: 500px;
+  border: 10px solid black;
+  margin: 0 16%;
+  margin-top: -5px;
+  display: flex;
+  background-color: rgb(240, 243, 245);
+  padding: 0 50px;
+  gap: 20px;
 }
 
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  min-height: 320px;
+.block{
+  flex-direction: column;
+  width: 367px;
+  height: 420px;
+  border: 8px solid rgb(246, 242, 244);
+  border-radius: 5px;
+  margin: 30px 10px;
+  transition:transform 0.3s ease-in-out;
+  box-shadow: 10px 10px 5px 5px rgba(83, 79, 82, 0.2); /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+
 }
 
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: -40px 0 0 40px;
-  position: relative;
-  z-index: 2;
-  border: 6px solid var(--background-color);
+.block:hover{
+  cursor:grab;
+  transform: scale(1.1);
 }
 
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 45px;
+.block img{
+  width: 350px;
+  height: 405px;
+} 
+
+/* Overlay layer */
+.block .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7); /* dark transparent */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 0 0 0 45px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
-  font-size: 26px;
-  line-height: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-  transform: scale(-1, -1);
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 15px 0 15px;
-  padding: 20px 20px 60px 20px;
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
-  position: relative;
-  border-radius: 6px;
-  position: relative;
-  z-index: 1;
-}
-
-.testimonials .swiper-wrapper {
-  height: auto;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: var(--background-color);
+.block:hover .overlay {
   opacity: 1;
-  border: 1px solid var(--accent-color);
 }
 
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+.overlay h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(246, 26, 158);
 }
+
+.overlay p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 
 /*--------------------------------------------------------------
 # Contact Section
@@ -1308,7 +1240,7 @@ section,
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
-.service-details .services-list {
+/* .service-details .services-list {
   background-color: var(--surface-color);
   padding: 10px 30px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -1369,7 +1301,7 @@ section,
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
-}
+} */
 
 /*--------------------------------------------------------------
 # Starter Section Section

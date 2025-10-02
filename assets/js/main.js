@@ -243,28 +243,28 @@
 })();
 
 // resume downloader
-let resumeId = document.querySelector("#downloadBtn");
-function Resumedownload() {
-      // const pdfUrl="../docs/Parul_Nag_Resume.pdf";
-      // const link=document.createElement("a");
-      // link.href=pdfUrl;
-      // link.download="document.pdf";
-      // document.body.appendChild(link);
-      // link.click();
-      // document.body.removeChild(link);
+// let resumeId = document.querySelector("#downloadBtn");
+// function Resumedownload() {
+//       // const pdfUrl="../docs/Parul_Nag_Resume.pdf";
+//       // const link=document.createElement("a");
+//       // link.href=pdfUrl;
+//       // link.download="document.pdf";
+//       // document.body.appendChild(link);
+//       // link.click();
+//       // document.body.removeChild(link);
 
-  fetch("Parul_Nag_Resume.pdf").then((response) => {
-    response.blob().then((blob) => {
-      // Creating new object of PDF file
-      const fileURL = window.URL.createObjectURL(blob);
+//   fetch("Parul_Nag_Resume.pdf").then((response) => {
+//     response.blob().then((blob) => {
+//       // Creating new object of PDF file
+//       const fileURL = window.URL.createObjectURL(blob);
 
-      // Setting various property values
-      let alink = document.createElement("a");
-      alink.href = fileURL;
-      alink.download = "Parul_Nag_Resume.pdf";
-      alink.click();
-    });
-  });
-}
+//       // Setting various property values
+//       let alink = document.createElement("a");
+//       alink.href = fileURL;
+//       alink.download = "Parul_Nag_Resume.pdf";
+//       alink.click();
+//     });
+//   });
+// }
 
-resumeId.addEventListener("click", Resumedownload);
+// resumeId.addEventListener("click", Resumedownload);
